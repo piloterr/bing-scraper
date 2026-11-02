@@ -15,7 +15,7 @@ import (
 
 func main() {
 	params := url.Values{}
-	params.Set("query", "artificial intelligence news 2024")
+	params.Set("query", "openai")
 
 	req, _ := http.NewRequest("GET", "https://api.piloterr.com/v2/bing/search?"+params.Encode(), nil)
 	req.Header.Set("x-api-key", os.Getenv("PILOTERR_API_KEY"))

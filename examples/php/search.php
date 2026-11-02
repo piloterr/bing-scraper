@@ -3,7 +3,7 @@
 // Usage: PILOTERR_API_KEY=your-key php search.php
 
 $params = http_build_query([
-    'query' => 'artificial intelligence news 2024',
+    'query' => 'openai',
 ]);
 
 $ch = curl_init('https://api.piloterr.com/v2/bing/search?' . $params);

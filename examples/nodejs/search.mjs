@@ -2,7 +2,7 @@
 // Usage: PILOTERR_API_KEY=your-key node search.mjs
 
 const params = new URLSearchParams({
-  "query": "artificial intelligence news 2024",
+  "query": "openai",
 });
 
 const response = await fetch(`https://api.piloterr.com/v2/bing/search?${params}`, {

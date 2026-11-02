@@ -71,7 +71,7 @@ response = requests.get(
     "https://api.piloterr.com/v2/bing/search",
     headers={"x-api-key": os.environ["PILOTERR_API_KEY"]},
     params={
-        "query": "artificial intelligence news 2024",
+        "query": "openai",
     },
     timeout=60,
 )
@@ -95,17 +95,17 @@ type BingSearch = {
     link?: string;
     title?: string;
     domain?: string;
-    snippet?: unknown;
+    snippet?: string;
     position?: number;
     displayed_link?: string;
-    snippet_matched?: unknown[];
+    snippet_matched?: string[];
   }[];
   search_parameters?: {
     q?: string;
-    cc?: unknown;
+    cc?: string;
     lat?: unknown;
     lon?: unknown;
-    mkt?: unknown;
+    mkt?: string;
     num?: unknown;
     page?: number;
     engine?: string;
@@ -118,7 +118,7 @@ type BingSearch = {
 };
 
 const params = new URLSearchParams({
-  "query": "artificial intelligence news 2024",
+  "query": "openai",
 });
 
 const response = await fetch(`https://api.piloterr.com/v2/bing/search?${params}`, {
@@ -139,7 +139,7 @@ POST https://api.piloterr.com/v2/bing/search
 x-api-key: YOUR_API_KEY
 Content-Type: application/json
 
-{"query": "artificial intelligence news 2024"}
+{"query": "openai"}
 ```
 </details>
 
@@ -157,30 +157,32 @@ Example response from the API reference, abridged — real values depend on the 
   },
   "organic_results": [
     {
-      "link": "https://en.m.wikipedia.org/wiki/Artificial_intelligence",
-      "title": "Artificial intelligence - Wikipedia",
-      "domain": "en.m.wikipedia.org",
-      "snippet": null,
+      "link": "https://openai.com/",
+      "title": "OpenAI",
+      "domain": "openai.com",
+      "snippet": "OpenAI is an AI research and deployment company.",
       "position": 1,
-      "displayed_link": "https://en.m.wikipedia.org › wiki ›Artificial_intelligence",
-      "snippet_matched": []
+      "displayed_link": "https://openai.com",
+      "snippet_matched": [
+        "openai"
+      ]
     },
     {
-      "link": "https://www.britannica.com/technology/artificial-intelligence",
-      "title": "Artificial intelligence (AI) | Definition, Examples, Types ...",
-      "domain": "britannica.com",
-      "snippet": null,
+      "link": "https://platform.openai.com/docs",
+      "title": "OpenAI API documentation",
+      "domain": "platform.openai.com",
+      "snippet": "Guides and the API reference for the OpenAI platform.",
       "position": 2,
-      "displayed_link": "https://www.britannica.com › technology ›artificial-intelligence",
+      "displayed_link": "https://platform.openai.com › docs",
       "snippet_matched": []
     }
   ],
   "search_parameters": {
-    "q": "artificial intelligence",
-    "cc": null,
+    "q": "openai",
+    "cc": "us",
     "lat": null,
     "lon": null,
-    "mkt": null,
+    "mkt": "en-US",
     "num": null,
     "page": 1,
     "engine": "bing",
@@ -206,16 +208,16 @@ Example response from the API reference, abridged — real values depend on the 
 | `organic_results[].link` | string |  |
 | `organic_results[].title` | string |  |
 | `organic_results[].domain` | string |  |
-| `organic_results[].snippet` | object |  |
+| `organic_results[].snippet` | string |  |
 | `organic_results[].position` | integer |  |
 | `organic_results[].displayed_link` | string |  |
-| `organic_results[].snippet_matched` | any[] |  |
+| `organic_results[].snippet_matched` | string[] |  |
 | `search_parameters` | object |  |
 | `search_parameters.q` | string |  |
-| `search_parameters.cc` | object |  |
+| `search_parameters.cc` | string |  |
 | `search_parameters.lat` | object |  |
 | `search_parameters.lon` | object |  |
-| `search_parameters.mkt` | object |  |
+| `search_parameters.mkt` | string |  |
 | `search_parameters.num` | object |  |
 | `search_parameters.page` | integer |  |
 | `search_parameters.engine` | string |  |

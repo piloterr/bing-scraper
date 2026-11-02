@@ -5,4 +5,4 @@ set -euo pipefail
 
 curl -sS -G "https://api.piloterr.com/v2/bing/search" \
   -H "x-api-key: ${PILOTERR_API_KEY}" \
-  --data-urlencode 'query=artificial intelligence news 2024'
+  --data-urlencode query=openai
