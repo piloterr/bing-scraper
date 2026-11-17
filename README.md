@@ -301,8 +301,10 @@ Use Piloterr from your own language with a typed client:
 ## Related scrapers
 
 - [Brave Scraper API](https://github.com/piloterr/brave-scraper)
+- [DuckDuckGo Scraper API](https://github.com/piloterr/duckduckgo-scraper)
 - [Google Scraper API](https://github.com/piloterr/google-scraper)
 - [Google Ads Transparency Scraper API](https://github.com/piloterr/googleadstransparency-scraper)
+- [Yahoo Scraper API](https://github.com/piloterr/yahoo-scraper)
 - [All Piloterr scrapers on GitHub](https://github.com/piloterr)
 
 ## Support
